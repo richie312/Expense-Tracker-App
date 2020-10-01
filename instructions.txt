@@ -1,0 +1,9 @@
+Things to do
+
+1. Store the planned estimated expense table in the databaseDone
+2. store the actual expense table in the database. done 
+3. prepare the expense growth rate table in the database. In progress
+4. prepare the submit entry post api
+5. prepare the expense growth rate logic and schedule 6 hour cron job to update the expense grwoth rate table in the database.
+6. prepare the fetch expense gr get api call.
+7. 

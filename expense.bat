@@ -1,0 +1,1 @@
+C:\python_envs\expense\Scripts\Activate.bat

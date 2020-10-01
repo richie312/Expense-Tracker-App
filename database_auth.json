@@ -1,0 +1,5 @@
+{"host":"nirvikalpadb.caeur989vnkg.ap-south-1.rds.amazonaws.com",
+"port":3306,
+"dbname":"RDS_MySql",
+"dbuser":"richie31",
+"db_pass":"Nirvikalpa!123"}
