@@ -1,6 +1,6 @@
  SET SQL_SAFE_UPDATES = 0;
- -- delete from Expense.current_total_expense_v1 where updated = '2020-10-01 19:05:35'
-Select * from Expense.current_total_expense_v1
+ --  delete from Expense.current_total_expense_v1 where batchid is NULL
+-- Select * from Expense.current_total_expense_v1
 -- Select max(batchid) from Expense.planned_estimated_cost_v1
 -- Select * from Expense.planned_estimated_cost_v1 where batchid = 20201001
 -- alter table Expense.current_total_expense_v1 add column batchid bigint;
