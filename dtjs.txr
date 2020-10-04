@@ -1,0 +1,24 @@
+$(document).ready(function (){
+    var table = $('#example').DataTable({
+        drawCallback: function(){
+           var api = this.api();
+           
+           api.columns().every( function () {
+              var data = this.data();
+              
+              if($.inArray('O', data) !== -1){
+                 $(this.nodes()).addClass('highlight');
+              } else {
+                 $(this.nodes()).removeClass('highlight');
+              }
+           });
+
+
+
+    "rowCallback": function(row, data, index) {
+      if (data["rum"] == 2) {
+        $('td', row).css('background-color', 'Green');
+      } else if (data["cig"] == -54) {
+        $('td', row).css('background-color', 'Red');
+      }
+    }

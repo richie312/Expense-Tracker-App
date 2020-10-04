@@ -44,6 +44,7 @@ for sheet in list_sheet_names:
 logger.info("{}: Checking rules for relevant commodities...".format(datetime.now()))
 result = rules_check(conn)
 expense_gr_df = pd.DataFrame(result,columns = list(result.keys()))
+expense_gr_df.to_csv(os.path.join(data_folder,'expense.csv'),index = False)
 print(expense_gr_df)
 logger.info("{}: All the rules has been applied and ready for expense growth rate data insertion.".format(datetime.now()))
 
