@@ -54,3 +54,21 @@ logger.info("{}: Data Insertion for expense growth rate is completed.".format(da
 # Connection Closure
 logger.info("{}: Database connection closure.".format(datetime.now()))
 conn.close()
+
+""" cursor = conn.cursor()
+latest_batchid_query = "Select max(batchid) from Expense.actual_cost_v1"
+cursor.execute(latest_batchid_query)
+latest_batchid = cursor.fetchall()
+latest_batchid = latest_batchid[0][0]
+latest_df = "select * from Expense.actual_cost_v1 where batchid = {}".format(latest_batchid)
+cursor.execute(latest_df)
+latest_updated_df = cursor.fetchall()
+quantity = [latest_updated_df[i][1] for i in range(len(latest_updated_df))]
+Commodity = [latest_updated_df[i][0] for i in range(len(latest_updated_df))]
+
+for quant in range(len(quantity)):
+    print(quantity[quant])
+    query = "SET SQL_SAFE_UPDATES = 0"
+    cursor.execute(query)
+    cursor.execute("update Expense.actual_cost_v1 set Cumulative_Quantity = {} where batchid = {} and Commodity = %s".format(quantity[quant],202010051305),(Commodity[quant],))
+    conn.commit() """

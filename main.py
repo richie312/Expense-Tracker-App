@@ -91,9 +91,32 @@ def current_expense_data():
     collection = [dict(zip(column_list,vals[i])) for i in range(len(vals))]
     val = {"data": collection}
     return jsonify(val)
+
+@app.route("/addDetails",methods=['POST'])
+def addDetails():
+    # Initiate the database connection
+    conn = db_connection_string()
+    cursor = conn.cursor()
+    data = request.form
+    if data["cash"] ==  '':
+        pass
+    else:
+        query = "SET SQL_SAFE_UPDATES = 0;"
+        cursor.execute(query)
+        cash_query = """update Expense.current_total_expense_v1 set Cash_Withdrawn = Cash_Withdrawn  + {}, 
+                        batchid = {},
+                        updated = {}""".format(int(data["cash"]),
+                        int(datetime.now().strftime('%Y%m%d')),
+                        datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    if (data["cost"] != "") and (data["item_type"] != "") and (data["quantity"] != ""):
+
+    else:
+        pass
+
+    return data
+
 # close the connection
 #conn.close()
-
 if __name__ == '__main__':
     app.run(host = '0.0.0.0',debug=True,port=5003)
 

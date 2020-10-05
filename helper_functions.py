@@ -42,7 +42,7 @@ class DataObject(object):
             logger.info("{}:Inserting data for Expense.{table_name} ... ".format(datetime.now(),table_name = sheet))
             values = self.data.iloc[:row+1,].values.tolist()[0]
             values.append(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-            values.append(int(datetime.now().strftime('%Y%m%d')))
+            values.append(int(datetime.now().strftime('%Y%m%d%H%M')))
             query = """INSERT INTO Expense.{table_name} (Earlier, Now, Days_Left, Cash_Withdrawn, updated,batchid) values {vals}""".format(table_name = sheet,vals= tuple(values))
             cursor.execute(query)
             print(query)
@@ -64,7 +64,7 @@ class DataObject(object):
             values = self.data.iloc[:row,].values.tolist()
             for val in values:
                 val.append(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-                val.append(int(datetime.now().strftime('%Y%m%d')))
+                val.append(int(datetime.now().strftime('%Y%m%d%H%M')))
                 query = """INSERT INTO Expense.{table_name} (Commodity, Quantity, Cost, Total, GrandTotal, updated, batchid) values {vals}""".format(table_name = sheet,vals= tuple(val))
                 cursor.execute(query)  
                 conn.commit()
@@ -85,7 +85,7 @@ class DataObject(object):
             values = self.data.iloc[:row,].values.tolist()
             for val in values:
                 val.append(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-                val.append(int(datetime.now().strftime('%Y%m%d')))
+                val.append(int(datetime.now().strftime('%Y%m%d%H%M')))
                 query = """INSERT INTO Expense.{table_name} (Commodity, Quantity, Cost, Total, GrandTotal, updated, batchid) values {vals}""".format(table_name = sheet,vals= tuple(val))
                 cursor.execute(query)  
                 conn.commit()
