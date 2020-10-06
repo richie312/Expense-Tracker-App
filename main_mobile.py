@@ -123,14 +123,14 @@ def addDetails():
 
         query = "SET SQL_SAFE_UPDATES = 0;"
         cursor.execute(query)
-        cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = {},Total = Cumulative_Quantity * {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),int(data["cost"]),202010061005)
+        cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = {},Total = Cumulative_Quantity * {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),int(data["cost"]),latest_batchid)
         cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
         conn.commit()
         sum_query = "Select sum(Total) from Expense.actual_cost_v1 where batchid = {}".format(latest_batchid)
         cursor.execute(sum_query)
         total = cursor.fetchone()
         total = int(total[0])
-        update_total_column = """update Expense.actual_cost_v1 set GrandTotal = {}, updated = %s where batchid = {}""".format(total,202010061005)
+        update_total_column = """update Expense.actual_cost_v1 set GrandTotal = {}, updated = %s where batchid = {}""".format(total,latest_batchid)
         cursor.execute(update_total_column,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),))
         conn.commit()
     else:
