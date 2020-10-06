@@ -1,3 +1,8 @@
 auth/*
 nohup.out
 logs.txt
+__pycache__/database.cpython-36.pyc
+__pycache__/decrypt.cpython-36.pyc
+__pycache__/helper_functions.cpython-36.pyc
+config/__pycache__/__init__.cpython-36.pyc
+config/__pycache__/meta.cpython-36.pyc
