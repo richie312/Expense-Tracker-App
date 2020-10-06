@@ -137,3 +137,59 @@
  * Restarting with inotify reloader
  * Debugger is active!
  * Debugger PIN: 162-659-695
+183.83.147.91 - - [06/Oct/2020 12:21:30] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:21:36] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:21:36] "[37mGET /expense_data?_=1601986895983 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:21:37] "[37mGET /current_expense_data?_=1601986895984 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:23:54] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:23:55] "[37mGET /expense_data?_=1601987034625 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:23:55] "[37mGET /current_expense_data?_=1601987034626 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:24:57] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:24:58] "[37mGET /expense_data?_=1601987097710 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:24:58] "[37mGET /current_expense_data?_=1601987097711 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:26:45] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:26:45] "[37mGET /expense_data?_=1601987204992 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:26:45] "[37mGET /current_expense_data?_=1601987204993 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:29:54] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:29:54] "[37mGET /expense_data?_=1601987394253 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:29:54] "[37mGET /current_expense_data?_=1601987394254 HTTP/1.1[0m" 200 -
+Traceback (most recent call last):
+  File "main_mobile.py", line 3, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+ * Serving Flask app "main_mobile" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "main_mobile.py", line 141, in <module>
+    app.run(host = '0.0.0.0',debug=True,port=5003)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/werkzeug/serving.py", line 1030, in run_simple
+    s.bind(server_address)
+OSError: [Errno 98] Address already in use
+ * Serving Flask app "main_mobile" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5003/ (Press CTRL+C to quit)
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.147.91 - - [06/Oct/2020 12:31:40] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:31:40] "[37mGET /expense_data?_=1601987500492 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:31:40] "[37mGET /current_expense_data?_=1601987500493 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:31:49] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:31:49] "[37mGET /expense_data?_=1601987508811 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:31:49] "[37mGET /current_expense_data?_=1601987508812 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:32:39] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:32:44] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:32:44] "[37mGET /expense_data?_=1601987564299 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:32:44] "[37mGET /current_expense_data?_=1601987564300 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:38:57] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:39:02] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:39:02] "[37mGET /expense_data?_=1601987942372 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:39:02] "[37mGET /current_expense_data?_=1601987942373 HTTP/1.1[0m" 200 -
