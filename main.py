@@ -70,7 +70,7 @@ def homepage():
 @app.route("/expense_data",methods=['GET'])
 def expense_data():
     expense_df = pd.read_csv(os.path.join(data_folder,'expense.csv'))
-    columns = ['Commodity','Cost','ColorCode']
+    columns = ['Commodity','Cost','ColorCode','Unit of Measurement']
     item_data = expense_df.columns.values.tolist()
     col_data = expense_df.iloc[:1,].values.tolist()
     cost_data = expense_df.iloc[:len(expense_df),].values.tolist()[1:]
@@ -78,6 +78,7 @@ def expense_data():
     temp_df['Commodity'] = item_data
     temp_df['Cost'] = cost_data[0]
     temp_df['ColorCode'] = col_data[0]
+    temp_df['Unit of Measurement'] = ['Bottle','Units','INR','INR','Bottle','INR','INR','INR','INR']
     data = temp_df.iloc[:len(temp_df),].values.tolist()
     collection = [dict(zip(columns,data[i])) for i in range(len(data))]
     data = {"data": collection}
@@ -125,7 +126,7 @@ def addDetails():
         cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = {},Total = Cumulative_Quantity * {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),int(data["cost"]),202010061005)
         cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
         conn.commit()
-        sum_query = "Select sum(Total) from Expense.actual_cost_v1 where batchid = {}".format(202010061005)
+        sum_query = "Select sum(Total) from Expense.actual_cost_v1 where batchid = {}".format(latest_batchid)
         cursor.execute(sum_query)
         total = cursor.fetchone()
         total = int(total[0])

@@ -1,0 +1,8 @@
+
+create table expense_growth_rate_v1(
+   Commodity varchar(100),
+   ColorCode  varchar(100),
+   Cost_Quantity bigint,
+   updated datetime,
+   batchid bigint
+);

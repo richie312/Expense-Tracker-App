@@ -106,7 +106,8 @@ input[type=submit]:hover {
         <thead>
             <tr>
                 <th>Commodity</th>
-                <th>Cost</th>
+                <th>Cost/Quantity</th>
+                <th>Unit of Measurement</th>
               </tr>
         </thead>
     </table>
@@ -126,7 +127,8 @@ function setupData() {
             },
             "columns": [
                 {"data": "Commodity"},
-                {"data": "Cost"}
+                {"data": "Cost"},
+                {"data": "Unit of Measurement"}
             ],
             "createdRow": function(row, data, dataIndex) {
       
