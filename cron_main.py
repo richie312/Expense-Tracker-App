@@ -1,3 +1,4 @@
+#/home/ubuntu/envs/expense/bin/python3
 import os
 from dotenv import load_dotenv
 import mysql
