@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 import mysql
+import argparse
 import mysql.connector
 import pandas as pd
 import config.meta as meta
@@ -21,14 +22,27 @@ data_folder = os.path.join(root_folder,'data')
 filename = 'monthly_exp.xlsx'
 list_sheet_names = meta.run_config['sheetname']
 
+# Generate command line args for generating dataframe from base template
+my_parser.add_argument('--generate_datarame',
+                        help = 'True or False in order to create dataset from template.csv',
+                        default = False,
+                        required = False)
+
+# print default values of the command line argument
+
+args = my_parser.parse_args()
+generate_dataframe = bool(args.generate_dataframe)
+logger_info('The arg value for generate_dataframe is {}'.format(generate_dataframe))
+
 
 # Generate Dataframe
-for sheet in list_sheet_names:
-    if sheet == 'expense':
-        print("This sheet wil be creating after comapring the results from database.")
-    else:
-        data = generate_dataframe(filename,sheet)
-        data.to_csv(os.path.join(data_folder,'{}.csv'.format(sheet)),index = False)
+if generate_dataframe == True:
+    for sheet in list_sheet_names:
+        if sheet == 'expense':
+            print("This sheet wil be creating after comapring the results from database.")
+        else:
+            data = generate_dataframe(filename,sheet)
+            data.to_csv(os.path.join(data_folder,'{}.csv'.format(sheet)),index = False)
 
 # Data Insertion
 # Instantiate database connection
