@@ -63,7 +63,7 @@ def homepage():
     last_cash_withdrawn = int(val[3])
     #cursor.close()
     #conn.close()
-    return render_template("user_form.html", 
+    return render_template("user_form_mobile.html", 
                             item_list = commodity_list,
                             last_cash_withdrawn = last_cash_withdrawn)
 
