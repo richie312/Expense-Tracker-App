@@ -1,4 +1,4 @@
-
+#/home/ubuntu/envs/expense/bin/python3
 import os
 from dotenv import load_dotenv
 import mysql
@@ -13,7 +13,7 @@ from helper_functions import generate_dataframe,DataObject, rules_check
 
 # Initailise the logger
 logger = logging.getLogger()
-logging.basicConfig(level= logging.INFO)
+logging.basicConfig(filename='cron_man.log', encoding='utf-8', level= logging.INFO)
 
 
 # set the root and data folder
@@ -24,7 +24,8 @@ filename = 'monthly_exp.xlsx'
 list_sheet_names = meta.run_config['sheetname']
 
 # Generate command line args for generating dataframe from base template
-my_parser.add_argument('--generate_datarame',
+my_parser = argparse.ArgumentParser()
+my_parser.add_argument('--generate_dataframe',
                         help = 'True or False in order to create dataset from template.csv',
                         default = False,
                         required = False)
@@ -33,7 +34,7 @@ my_parser.add_argument('--generate_datarame',
 
 args = my_parser.parse_args()
 generate_dataframe = bool(args.generate_dataframe)
-logger_info('The arg value for generate_dataframe is {}'.format(generate_dataframe))
+logger.info('The arg value for generate_dataframe is {}'.format(generate_dataframe))
 
 
 # Generate Dataframe
