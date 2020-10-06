@@ -12,7 +12,7 @@ def addDetails():
         cash_query = """update Expense.current_total_expense_v1 set Cash_Withdrawn = Cash_Withdrawn  + {}, 
                         batchid = {},
                         updated = {}""".format(int(data["cash"]),
-                        int(datetime.now().strftime('%Y%m%d')),
+                        int(datetime.now().strftime('%Y%m%d%H%M')),
                         datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     if (data["cost"] != "") and (data["item_type"] != "") and (data["quantity"] != ""):
 

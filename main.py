@@ -92,9 +92,51 @@ def current_expense_data():
     val = {"data": collection}
     return jsonify(val)
 
+@app.route("/addDetails",methods=['POST'])
+def addDetails():
+    # Initiate the database connection
+    conn = db_connection_string()
+    cursor = conn.cursor()
+    data = request.form
+    if data["cash"] ==  '':
+        pass
+    else:
+        latest_batchid_query = "Select max(batchid) from Expense.current_total_expense_v1"
+        cursor.execute(latest_batchid_query)
+        latest_batchid = cursor.fetchall()
+        latest_batchid = latest_batchid[0][0]
 
-# close the connection
-#conn.close()
+        query = "SET SQL_SAFE_UPDATES = 0;"
+        cursor.execute(query)
+        cash_query = """update Expense.current_total_expense_v1 set Cash_Withdrawn = Cash_Withdrawn  + {},updated = %s where batchid = {}""".format(int(data["cash"]),latest_batchid)
+        cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),))
+        conn.commit()
+    if (data["cost"] == "") and (data["quantity"] == ""):
+        handler = 'empty'
+    elif (data["cost"] != "") and (data["quantity"] != ""):
+        handler = "Database Updated"
+        latest_batchid_query = "Select max(batchid) from Expense.actual_cost_v1"
+        cursor.execute(latest_batchid_query)
+        latest_batchid = cursor.fetchall()
+        latest_batchid = latest_batchid[0][0]
+
+        query = "SET SQL_SAFE_UPDATES = 0;"
+        cursor.execute(query)
+        cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = {},Total = Cumulative_Quantity * {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),int(data["cost"]),202010061005)
+        cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+        conn.commit()
+        sum_query = "Select sum(Total) from Expense.actual_cost_v1 where batchid = {}".format(202010061005)
+        cursor.execute(sum_query)
+        total = cursor.fetchone()
+        total = int(total[0])
+        update_total_column = """update Expense.actual_cost_v1 set GrandTotal = {}, updated = %s where batchid = {}""".format(total,202010061005)
+        cursor.execute(update_total_column,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),))
+        conn.commit()
+    else:
+        handler = "Nothing to Submit"
+    print(handler)
+    return jsonify(data)
+
 if __name__ == '__main__':
     app.run(host = '0.0.0.0',debug=True,port=5003)
 

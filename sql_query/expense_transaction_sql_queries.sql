@@ -1,4 +1,4 @@
- SET SQL_SAFE_UPDATES = 0;
+ -- SET SQL_SAFE_UPDATES = 0;
  --  delete from Expense.current_total_expense_v1 where batchid is NULL
 -- Select * from Expense.current_total_expense_v1
 -- Select max(batchid) from Expense.planned_estimated_cost_v1
@@ -9,5 +9,6 @@
 -- alter table Expense.actual_cost_v1 add column updated datetime
 -- alter table Expense.actual_cost_v1 add column Cumulative_Quantity bigint
 -- update Expense.actual_cost_v1 set Cumulative_Quantity = 1 where batchid = 202010051305 and Commodity = 'Grocery'
- Select * from Expense.actual_cost_v1 where batchid = 202010060950
+ -- Select * from Expense.current_total_expense_v1
 -- update Expense.current_total_expense_v1  set batchid = 20201001
+update Expense.current_total_expense_v1 set Cash_Withdrawn = Cash_Withdrawn  + 100, batchid = 202010061146, updated = '2020-10-06 11:46:59'
