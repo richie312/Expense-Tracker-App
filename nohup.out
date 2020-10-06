@@ -47,3 +47,93 @@
  * Restarting with inotify reloader
  * Debugger is active!
  * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.147.91 - - [06/Oct/2020 11:41:36] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 11:41:37] "[37mGET /expense_data?_=1601984496503 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 11:41:37] "[37mGET /current_expense_data?_=1601984496504 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.147.91 - - [06/Oct/2020 12:01:44] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:01:45] "[37mGET /expense_data?_=1601985704713 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:01:45] "[37mGET /current_expense_data?_=1601985704714 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:01:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+183.83.147.91 - - [06/Oct/2020 12:02:03] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:02:04] "[37mGET /expense_data?_=1601985723709 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:02:04] "[37mGET /current_expense_data?_=1601985723710 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:04:12] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:04:13] "[37mGET /expense_data?_=1601985852826 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:04:13] "[37mGET /current_expense_data?_=1601985852827 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:07:51] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:07:51] "[37mGET /expense_data?_=1601986071162 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:07:51] "[37mGET /current_expense_data?_=1601986071163 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:08:39] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:08:39] "[37mGET /expense_data?_=1601986119113 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:08:39] "[37mGET /current_expense_data?_=1601986119114 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.147.91 - - [06/Oct/2020 12:13:31] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:13:31] "[37mGET /expense_data?_=1601986411150 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:13:31] "[37mGET /current_expense_data?_=1601986411151 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:06] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:06] "[37mGET /expense_data?_=1601986446332 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:06] "[37mGET /current_expense_data?_=1601986446333 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:12] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:12] "[37mGET /expense_data?_=1601986451897 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:12] "[37mGET /current_expense_data?_=1601986451898 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:40] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:40] "[37mGET /expense_data?_=1601986479963 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:40] "[37mGET /current_expense_data?_=1601986479964 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:43] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:43] "[37mGET /expense_data?_=1601986482992 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:43] "[37mGET /current_expense_data?_=1601986482993 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:44] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:44] "[37mGET /expense_data?_=1601986484233 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 12:14:44] "[37mGET /current_expense_data?_=1601986484234 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
