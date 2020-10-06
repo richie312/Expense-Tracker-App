@@ -74,7 +74,7 @@ for sheet in list_sheet_names:
 
 logger.info("All Database Updated.")
 with open(r'logs.txt','a+') as outfile:
-    outfile.write("{}: All databse updated".format(datetime.now()))
+    outfile.write("{}: All database updated \n".format(datetime.now()))
 # Connection Closure
 logger.info("{}: Database connection closure.".format(datetime.now()))
 conn.close()

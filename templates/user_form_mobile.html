@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css"/>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+
+<body>
+
+<h2 style = "text-align: center;">Monthly Expense Tracker</h2>
+
+<div class="container">
+  <form action="/addDetails" method="post">
+    <label for="fname"><h3>Expense Tracker</h3></label>
+    <div>
+    <br>
+    <label for="fname">Select Item</label>
+    <br>
+    <br>
+    <select id="item_type" name="item_type">
+      {% for each in item_list %}
+      <option value="{{each}}">{{each}}</option>
+      {% endfor %}
+    <br>
+    <br>
+    <label for="fname">Quantity</label>
+    <br>
+    <br>
+    <input type="number" id="quantity" name="quantity" placeholder="0">
+    <br>
+    <br>
+    <label for="fname">Cost</label>
+    <br>
+    <br>
+    <input type="number" id="cost" name="cost" placeholder="0">
+    <label for="fname">INR</label>
+    <br>
+    <br>
+    
+    <label for="fname">Cash Withdrawn</label>
+    <br>
+    <br>   
+    <input type="number" id="cash" name="cash" placeholder={{last_cash_withdrawn}}>
+    <br>
+    <br>   
+    
+    <input type="reset" value="Reset">
+    <input type="submit" value="Submit Entry">
+  </form>
+</div>
+<div class="column">
+<h4>Essential Expense Details</h4>
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Commodity</th>
+                <th>Cost/Quantity</th>
+                <th>Unit of Measurement</th>
+              </tr>
+        </thead>
+    </table>
+<script>
+function setupData() {
+    
+    $(document).ready(function () {
+        $('#example').DataTable({
+          
+            "ajax": {
+                "url": "/expense_data",
+                "datatype": "json",
+                "dataSrc": "data",
+                "type": "GET",
+                "contentType":"application/json",
+                "serverSide": true
+            },
+            "columns": [
+                {"data": "Commodity"},
+                {"data": "Cost"},
+                {"data": "Unit of Measurement"}
+            ],
+            "createdRow": function(row, data, dataIndex) {
+      
+        $(row).css('background-color', data['ColorCode']);
+      
+    }
+        });
+    });
+}
+$( window ).on( "load", setupData );
+</script>
+
+</div>
+
+<div class="column">
+
+<h4>Current Expense Status</h4>
+
+<table id="current_expense" class="display" style="width:100%">
+  <thead>
+      <tr>
+          <th>Cash Withdrawn</th>
+          <th>Days Left</th>
+          <th>Earlier</th>
+          <th>Now</th>
+        </tr>
+  </thead>
+</table>
+<script>
+function currentexpensedata() {
+
+$(document).ready(function () {
+  $('#current_expense').DataTable({
+    
+      "ajax": {
+          "url": "/current_expense_data",
+          "datatype": "json",
+          "dataSrc": "data",
+          "type": "GET",
+          "contentType":"application/json",
+          "serverSide": true
+      },
+      "columns": [
+          {"data": "Cash Withdrawn"},
+          {"data": "Days Left"},
+          {"data": "Earlier"},
+          {"data": "Now"},
+
+      ],
+      "createdRow": function(row, data, dataIndex) {
+        if( data["Now"] >= 15000  ){
+                                $(row).css('background-color', 'Green');
+                            }
+        if( data["Now"] < 15000  ){
+            $(row).css('background-color', 'Orange');
+        }
+        else{
+            $(row).css('background-color', 'Red');
+        }
+    
+  }
+  });
+});
+}
+$( window ).on( "load", currentexpensedata );
+</script>
+</div>
+
+
+</html>
