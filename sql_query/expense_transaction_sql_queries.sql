@@ -8,5 +8,6 @@
 -- Select * from Expense.actual_cost_v1 where batchid = max(batchid) 
 -- alter table Expense.actual_cost_v1 add column updated datetime
 -- alter table Expense.actual_cost_v1 add column Cumulative_Quantity bigint
-Select * from Expense.actual_cost_v1 where batchid = 202010051305
+-- update Expense.actual_cost_v1 set Cumulative_Quantity = 1 where batchid = 202010051305 and Commodity = 'Grocery'
+ Select * from Expense.actual_cost_v1 where batchid = 202010060950
 -- update Expense.current_total_expense_v1  set batchid = 20201001

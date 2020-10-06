@@ -51,11 +51,10 @@ logger.info("{}: All the rules has been applied and ready for expense growth rat
 # Expense Growth Rate Data Insertion
 logger.info("{}: Data Insertion for expense growth rate is completed.".format(datetime.now()))
 
-# Connection Closure
-logger.info("{}: Database connection closure.".format(datetime.now()))
-conn.close()
 
-""" cursor = conn.cursor()
+
+logger.info("Updating the cumulative quantity for each item in actual_cost_v1 table.")
+cursor = conn.cursor()
 latest_batchid_query = "Select max(batchid) from Expense.actual_cost_v1"
 cursor.execute(latest_batchid_query)
 latest_batchid = cursor.fetchall()
@@ -70,5 +69,10 @@ for quant in range(len(quantity)):
     print(quantity[quant])
     query = "SET SQL_SAFE_UPDATES = 0"
     cursor.execute(query)
-    cursor.execute("update Expense.actual_cost_v1 set Cumulative_Quantity = {} where batchid = {} and Commodity = %s".format(quantity[quant],202010051305),(Commodity[quant],))
-    conn.commit() """
+    cursor.execute("update Expense.actual_cost_v1 set Cumulative_Quantity = {} where batchid = {} and Commodity = %s".format(quantity[quant],latest_batchid),(Commodity[quant],))
+    conn.commit()
+
+logger.info("Updated.")
+# Connection Closure
+logger.info("{}: Database connection closure.".format(datetime.now()))
+conn.close()

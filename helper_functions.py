@@ -57,7 +57,7 @@ class DataObject(object):
         max_batchid = cursor.fetchone()
         max_batch_id = max_batchid[0]
         # Check whether the max batchid is of today or nor?
-        if int(datetime.now().strftime('%Y%m%d')) == max_batch_id:
+        if int(datetime.now().strftime('%Y%m%d%H%M')) == max_batch_id:
             logger.info("{}:Expense.{table_name} has been updated today. Aborting".format(datetime.now(),table_name = sheet))
         else:
             logger.info("{}:Inserting data for Expense.{table_name} ... ".format(datetime.now(),table_name = sheet))
@@ -78,7 +78,7 @@ class DataObject(object):
         max_batchid = cursor.fetchone()
         max_batch_id = max_batchid[0]
         # Check whether the max batchid is of today or nor?
-        if int(datetime.now().strftime('%Y%m%d')) == max_batch_id:
+        if int(datetime.now().strftime('%Y%m%d%H%M')) == max_batch_id:
             logger.info("{}:Expense.{table_name} has been updated today. Aborting".format(datetime.now(),table_name = sheet))
         else:
             logger.info("{}:Inserting data for Expense.{table_name} ... ".format(datetime.now(),table_name = sheet))
@@ -99,7 +99,7 @@ class DataObject(object):
         max_batchid = cursor.fetchone()
         max_batch_id = max_batchid[0]
         # Check whether the max batchid is of today or nor?
-        if int(datetime.now().strftime('%Y%m%d')) == max_batch_id:
+        if int(datetime.now().strftime('%Y%m%d%H%M')) == max_batch_id:
             logger.info("{}:Expense.{table_name} has been updated today. Aborting".format(datetime.now(),table_name = sheet))
         else:
             logger.info("{}:Inserting data for Expense.{table_name} ... ".format(datetime.now(),table_name = sheet))
@@ -170,17 +170,17 @@ def rules_check(conn):
     # Cig per day 5 check
     day_of_month = datetime.now().day
     
-    if new_df['actual_quantity'][new_df['items'] == 'cig'].values[0] == day_of_month * new_df['planned_quantity'][new_df['items'] == 'cig'].values[0]:
+    if new_df['actual_quantity'][new_df['items'] == 'cig'].values[0] == day_of_month * (new_df['planned_quantity'][new_df['items'] == 'cig'].values[0]/30):
         Color='#FFA500'
         Quantity=new_df['actual_quantity'][new_df['items'] == 'cig'].values[0]
 
-    elif new_df['actual_quantity'][new_df['items'] == 'cig'].values[0] < (new_df['planned_quantity'][new_df['items'] == 'cig'].values[0]):
+    elif new_df['actual_quantity'][new_df['items'] == 'cig'].values[0] < (new_df['planned_quantity'][new_df['items'] == 'cig'].values[0]/30)*day_of_month:
         Color = '#008000'
-        Quantity = (new_df['planned_quantity'][new_df['items'] == 'cig'].values[0]) - new_df['actual_quantity'][new_df['items'] == 'cig'].values[0]*day_of_month
+        Quantity = (new_df['planned_quantity'][new_df['items'] == 'cig'].values[0]/30)*day_of_month - (new_df['actual_quantity'][new_df['items'] == 'cig'].values[0])
 
-    elif new_df['actual_quantity'][new_df['items'] == 'cig'].values[0]  > (new_df['planned_quantity'][new_df['items'] == 'cig'].values[0]):
+    elif new_df['actual_quantity'][new_df['items'] == 'cig'].values[0]  > (new_df['planned_quantity'][new_df['items'] == 'cig'].values[0]/30)* day_of_month:
         Color = '#FF0000'
-        Quantity = new_df['actual_quantity'][new_df['items'] == 'cig'].values[0]*day_of_month - (new_df['planned_quantity'][new_df['items'] == 'cig'].values[0])
+        Quantity = new_df['actual_quantity'][new_df['items'] == 'cig'].values[0] - (new_df['planned_quantity'][new_df['items'] == 'cig'].values[0]/30) * day_of_month
     result['cig'] = {'Color':Color,'Quantity': Quantity}
 
     # Personal Tea Consumption is less than equal Rs 1400
@@ -239,11 +239,11 @@ def rules_check(conn):
 
     elif new_df['actual_total_cost'][new_df['items'] == 'chicken'].values[0] < new_df['estimated_price'][new_df['items'] == 'chicken'].values[0] * week_number:
         Color = '#008000'
-        Quantity = new_df['estimated_total_cost'][new_df['items'] == 'chicken'].values[0] - new_df['actual_total_cost'][new_df['items'] == 'chicken'].values[0]
+        Quantity = new_df['estimated_total_cost'][new_df['items'] == 'chicken'].values[0] * week_number - new_df['actual_total_cost'][new_df['items'] == 'chicken'].values[0]
 
     elif new_df['actual_total_cost'][new_df['items'] == 'chicken'].values[0]  > new_df['estimated_price'][new_df['items'] == 'chicken'].values[0] * week_number:
         Color = '#FF0000'
-        Quantity = new_df['actual_total_cost'][new_df['items'] == 'chicken'].values[0] - new_df['estimated_total_cost'][new_df['items'] == 'chicken'].values[0]
+        Quantity = new_df['actual_total_cost'][new_df['items'] == 'chicken'].values[0] - new_df['estimated_price'][new_df['items'] == 'chicken'].values[0] * week_number
     result['chicken'] = {'Color':Color,'Quantity': Quantity}
 
 
@@ -257,11 +257,11 @@ def rules_check(conn):
 
     elif new_df['actual_total_cost'][new_df['items'] == 'veg'].values[0] < 250 * week_number:
         Color = '#008000'
-        Quantity = new_df['estimated_total_cost'][new_df['items'] == 'veg'].values[0] - new_df['actual_total_cost'][new_df['items'] == 'veg'].values[0]
+        Quantity = (new_df['estimated_price'][new_df['items'] == 'veg'].values[0]/2)*week_number - new_df['actual_total_cost'][new_df['items'] == 'veg'].values[0]
 
     elif new_df['actual_total_cost'][new_df['items'] == 'veg'].values[0]  > 250 * week_number:
         Color = '#FF0000'
-        Quantity = new_df['actual_total_cost'][new_df['items'] == 'veg'].values[0] - new_df['estimated_total_cost'][new_df['items'] == 'veg'].values[0]
+        Quantity = new_df['actual_total_cost'][new_df['items'] == 'veg'].values[0] - (new_df['estimated_price'][new_df['items'] == 'veg'].values[0]/2)*week_number
     result['veg'] = {'Color':Color,'Quantity': Quantity}
 
 
