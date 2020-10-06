@@ -1,0 +1,43 @@
+ * Serving Flask app "main" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5003/ (Press CTRL+C to quit)
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.147.91 - - [06/Oct/2020 10:43:51] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 10:43:51] "[37mGET /expense_data?_=1601981031577 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 10:43:51] "[37mGET /current_expense_data?_=1601981031578 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 10:44:23] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 10:44:24] "[37mGET /expense_data?_=1601981063705 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [06/Oct/2020 10:44:24] "[37mGET /current_expense_data?_=1601981063706 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695

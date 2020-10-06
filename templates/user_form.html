@@ -118,7 +118,7 @@ function setupData() {
         $('#example').DataTable({
           
             "ajax": {
-                "url": "http://127.0.0.1:5003/expense_data",
+                "url": "/expense_data",
                 "datatype": "json",
                 "dataSrc": "data",
                 "type": "GET",
@@ -164,7 +164,7 @@ $(document).ready(function () {
   $('#current_expense').DataTable({
     
       "ajax": {
-          "url": "http://127.0.0.1:5003/current_expense_data",
+          "url": "/current_expense_data",
           "datatype": "json",
           "dataSrc": "data",
           "type": "GET",
