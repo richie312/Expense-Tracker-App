@@ -46,8 +46,8 @@ data_folder = os.path.join(root_folder,'data')
 # set workbook variables
 filename = 'monthly_exp.xlsx'
 list_sheet_names = meta.run_config['sheetname']
-
-
+cost_based_items = ['veg','chicken','Grocery','Miscellaneous','credit','Tea','Tea Mom','Amla and giloy']
+quantity_based_items = ['rum','cig','netflix','amazon','onedrive','internet','Juice','ParkFee']
 
 """ read the list of users"""
 @app.route("/")        
@@ -86,11 +86,21 @@ def expense_data():
 
 @app.route("/current_expense_data",methods=['GET'])
 def current_expense_data():
+    conn = db_connection_string()
+    cursor = conn.cursor()
+    latest_batchid_query = "Select max(batchid) from Expense.current_total_expense_v1"
+    cursor.execute(latest_batchid_query)
+    latest_batchid = cursor.fetchall()
+    latest_batchid = latest_batchid[0][0]
+    query = "select * from Expense.current_total_expense_v1 where batchid = {}".format(latest_batchid)
+    cursor.execute(query)
+    data = cursor.fetchall()
+    real_time_data = list(data[0])
+    
     current_expense_df = pd.read_csv(os.path.join(data_folder,'current_total_expense_v1.csv'))
     column_list = current_expense_df.columns.values.tolist()
-    vals = current_expense_df.iloc[:len(current_expense_df)].values.tolist()
-    collection = [dict(zip(column_list,vals[i])) for i in range(len(vals))]
-    val = {"data": collection}
+    collection = dict(zip(column_list,real_time_data[:4]))
+    val = {"data": [collection]}
     return jsonify(val)
 
 @app.route("/addDetails",methods=['POST'])
@@ -114,7 +124,30 @@ def addDetails():
         conn.commit()
     if (data["cost"] == "") and (data["quantity"] == ""):
         handler = 'empty'
-    elif (data["cost"] != "") and (data["quantity"] != ""):
+    elif (data["cost"] != "") and (data["quantity"] != "") and (data["item_type"] in cost_based_items):
+        handler = "Database Updated"
+        latest_batchid_query = "Select max(batchid) from Expense.actual_cost_v1"
+        cursor.execute(latest_batchid_query)
+        latest_batchid = cursor.fetchall()
+        latest_batchid = latest_batchid[0][0]
+
+        query = "SET SQL_SAFE_UPDATES = 0;"
+        cursor.execute(query)
+        cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = Cost + {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),latest_batchid)
+        cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+        conn.commit()
+        update_total_cost_query = "update Expense.actual_cost_v1 set Total = Cumulative_Quantity * Cost, updated = %s where batchid = {} and Commodity = %s".format(latest_batchid)
+        cursor.execute(update_total_cost_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+        conn.commit()
+        sum_query = "Select sum(Total) from Expense.actual_cost_v1 where batchid = {}".format(latest_batchid)
+        cursor.execute(sum_query)
+        total = cursor.fetchone()
+        total = int(total[0])
+        update_total_column = """update Expense.actual_cost_v1 set GrandTotal = {}, updated = %s where batchid = {}""".format(total,latest_batchid)
+        cursor.execute(update_total_column,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),))
+        conn.commit()
+
+    elif (data["cost"] != "") and (data["quantity"] != "") and (data["item_type"] in quantity_based_items):
         handler = "Database Updated"
         latest_batchid_query = "Select max(batchid) from Expense.actual_cost_v1"
         cursor.execute(latest_batchid_query)

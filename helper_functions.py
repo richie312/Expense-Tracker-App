@@ -144,7 +144,7 @@ def rules_check(conn):
     actual_price = []
     actual_total_cost = []
     for item in items:
-        query = """Select Quantity,Cost,Total from Expense.actual_cost_v1 where Commodity = %s and batchid = {batchid}""".format(batchid = max_batch_id)
+        query = """Select Cumulative_Quantity,Cost,Total from Expense.actual_cost_v1 where Commodity = %s and batchid = {batchid}""".format(batchid = max_batch_id)
         cursor.execute(query,(item,))
         val = cursor.fetchall()
         actual_quantity.append(val[0][0])
