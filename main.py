@@ -122,6 +122,10 @@ def addDetails():
         cash_query = """update Expense.current_total_expense_v1 set Cash_Withdrawn = Cash_Withdrawn  + {},updated = %s where batchid = {}""".format(int(data["cash"]),latest_batchid)
         cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),))
         conn.commit()
+        cash_query_actual_table = "update Expense.actual_cost_v1 set Cost = {},Total = Total + {}, updated = %s where batchid = {} and Commodity = %s".format(data["cash"], data["cash"],latest_batchid)
+        cursor.execute(cash_query_actual_table,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),'Cash Withdrawl',))
+        conn.commit()
+
     if (data["cost"] == "") and (data["quantity"] == ""):
         handler = 'empty'
     elif (data["cost"] != "") and (data["quantity"] != "") and (data["item_type"] in cost_based_items):
