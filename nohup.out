@@ -251,3 +251,38 @@ OSError: [Errno 98] Address already in use
  * Restarting with inotify reloader
  * Debugger is active!
  * Debugger PIN: 162-659-695
+183.83.147.91 - - [07/Oct/2020 07:31:16] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [07/Oct/2020 07:31:17] "[37mGET /expense_data?_=1602055877120 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [07/Oct/2020 07:31:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+183.83.147.91 - - [07/Oct/2020 07:31:17] "[37mGET /current_expense_data?_=1602055877121 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.147.91 - - [07/Oct/2020 07:32:07] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.91 - - [07/Oct/2020 07:32:07] "[37mGET /expense_data?_=1602055927205 HTTP/1.1[0m" 200 -
+183.83.147.91 - - [07/Oct/2020 07:32:07] "[37mGET /current_expense_data?_=1602055927206 HTTP/1.1[0m" 200 -
+74.120.14.35 - - [07/Oct/2020 11:02:50] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03!\x87')
+74.120.14.35 - - [07/Oct/2020 11:02:50] "[35m[1m {  w!	ÌV]¤qùsdÔQZÞæ&^ékäõ½vï[0m" HTTPStatus.BAD_REQUEST -
+74.120.14.35 - - [07/Oct/2020 11:02:51] "[37mGET / HTTP/1.1[0m" 200 -
+74.120.14.35 - - [07/Oct/2020 11:02:52] "[37mGET / HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:27:25] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:27:31] "[37mGET / HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:27:31] "[37mGET /expense_data?_=1602073649842 HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:27:31] "[37mGET /current_expense_data?_=1602073649843 HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:28:12] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:28:18] "[37mGET / HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:28:18] "[37mGET /expense_data?_=1602073696864 HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:28:18] "[37mGET /current_expense_data?_=1602073696865 HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:32:32] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:32:37] "[37mGET / HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:32:37] "[37mGET /expense_data?_=1602073956108 HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:32:37] "[37mGET /current_expense_data?_=1602073956109 HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:33:01] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:33:06] "[37mGET / HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:33:06] "[37mGET /expense_data?_=1602073985389 HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 12:33:06] "[37mGET /current_expense_data?_=1602073985390 HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 13:00:35] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 13:00:41] "[37mGET / HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 13:00:41] "[37mGET /expense_data?_=1602075639969 HTTP/1.1[0m" 200 -
+157.47.112.199 - - [07/Oct/2020 13:00:41] "[37mGET /current_expense_data?_=1602075639970 HTTP/1.1[0m" 200 -
