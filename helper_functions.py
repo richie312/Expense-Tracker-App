@@ -163,7 +163,7 @@ def rules_check(conn):
     result = {}
     day_of_month = datetime.now().day
     week_number = (day_of_month - 1) // 7 + 1
-    if new_df['actual_quantity'][new_df['items'] == 'rum'].values[0] == week_number * new_df['actual_quantity'][new_df['items'] == 'rum'].values[0]:
+    if new_df['actual_quantity'][new_df['items'] == 'rum'].values[0] ==  new_df['planned_quantity'][new_df['items'] == 'rum'].values[0]/week_number:
         Color='#FFA500'
         Quantity=new_df['actual_quantity'][new_df['items'] == 'rum'].values[0]
 
@@ -301,11 +301,11 @@ def rules_check(conn):
 
     elif new_df['actual_total_cost'][new_df['items'] == 'Miscellaneous'].values[0] < 250 * week_number:
         Color = '#008000'
-        Quantity = new_df['estimated_total_cost'][new_df['items'] == 'Miscellaneous'].values[0] - new_df['actual_total_cost'][new_df['items'] == 'Miscellaneous'].values[0]
+        Quantity = new_df['estimated_total_cost'][new_df['items'] == 'Miscellaneous'].values[0] / week_number - new_df['actual_total_cost'][new_df['items'] == 'Miscellaneous'].values[0]
 
     elif new_df['actual_total_cost'][new_df['items'] == 'Miscellaneous'].values[0]  > 250 * week_number:
         Color = '#FF0000'
-        Quantity = new_df['actual_total_cost'][new_df['items'] == 'Miscellaneous'].values[0] - new_df['estimated_total_cost'][new_df['items'] == 'Miscellaneous'].values[0]
+        Quantity = new_df['actual_total_cost'][new_df['items'] == 'Miscellaneous'].values[0] - new_df['estimated_total_cost'][new_df['items'] == 'Miscellaneous'].values[0] / week_number
     result['Miscellaneous'] = {'Color':Color,'Quantity': Quantity}
 
     return result

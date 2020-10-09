@@ -333,3 +333,24 @@ OSError: [Errno 98] Address already in use
 183.83.147.3 - - [09/Oct/2020 02:41:39] "[37mGET / HTTP/1.1[0m" 200 -
 183.83.147.3 - - [09/Oct/2020 02:41:40] "[37mGET /expense_data?_=1602211298342 HTTP/1.1[0m" 200 -
 183.83.147.3 - - [09/Oct/2020 02:41:40] "[37mGET /current_expense_data?_=1602211298343 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
