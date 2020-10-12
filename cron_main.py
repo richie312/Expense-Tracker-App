@@ -7,6 +7,7 @@ import mysql.connector
 import pandas as pd
 import config.meta as meta
 import logging
+import json
 from database import db_connection_string
 from datetime import datetime
 from helper_functions import generate_dataframe,DataObject, rules_check
