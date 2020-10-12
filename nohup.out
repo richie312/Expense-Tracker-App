@@ -354,3 +354,96 @@ OSError: [Errno 98] Address already in use
  * Restarting with inotify reloader
  * Debugger is active!
  * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.147.3 - - [09/Oct/2020 04:32:18] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 04:32:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+183.83.147.3 - - [09/Oct/2020 04:32:19] "[37mGET /expense_data?_=1602217938822 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 04:32:19] "[37mGET /current_expense_data?_=1602217938823 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.147.3 - - [09/Oct/2020 04:44:14] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 04:44:14] "[37mGET /expense_data?_=1602218653943 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 04:44:14] "[37mGET /current_expense_data?_=1602218653944 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 04:45:42] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 04:45:47] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 04:45:48] "[37mGET /expense_data?_=1602218747539 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 04:45:48] "[37mGET /current_expense_data?_=1602218747540 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:11:08] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:11:08] "[37mGET /expense_data?_=1602245468264 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:11:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+183.83.147.3 - - [09/Oct/2020 12:11:08] "[37mGET /current_expense_data?_=1602245468265 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:11:39] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:11:44] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:11:45] "[37mGET /expense_data?_=1602245504505 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:11:45] "[37mGET /current_expense_data?_=1602245504506 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:12:07] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:12:12] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:12:12] "[37mGET /expense_data?_=1602245532313 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:12:12] "[37mGET /current_expense_data?_=1602245532314 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:12:57] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:13:02] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:13:02] "[37mGET /expense_data?_=1602245582325 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:13:02] "[37mGET /current_expense_data?_=1602245582326 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:15:58] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:15:59] "[37mGET /expense_data?_=1602245757344 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:15:59] "[37mGET /current_expense_data?_=1602245757345 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:16:09] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:16:14] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:16:14] "[37mGET /expense_data?_=1602245772937 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 12:16:14] "[37mGET /current_expense_data?_=1602245772938 HTTP/1.1[0m" 200 -
+183.83.147.249 - - [09/Oct/2020 16:38:33] "[37mGET /expense_data?_=1602261511200 HTTP/1.1[0m" 200 -
+183.83.147.249 - - [09/Oct/2020 16:38:33] "[37mGET /current_expense_data?_=1602261511201 HTTP/1.1[0m" 200 -
+183.83.147.249 - - [09/Oct/2020 16:38:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+183.83.147.249 - - [09/Oct/2020 16:39:01] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.249 - - [09/Oct/2020 16:39:02] "[37mGET /expense_data?_=1602261540380 HTTP/1.1[0m" 200 -
+183.83.147.249 - - [09/Oct/2020 16:39:02] "[37mGET /current_expense_data?_=1602261540381 HTTP/1.1[0m" 200 -
+192.35.169.48 - - [10/Oct/2020 00:28:57] "[37mGET / HTTP/1.1[0m" 200 -
+85.93.20.170 - - [10/Oct/2020 00:39:59] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+85.93.20.170 - - [10/Oct/2020 00:39:59] "[35m[1m  /*à     Cookie: mstshash=Administr[0m" HTTPStatus.BAD_REQUEST -
+157.44.18.64 - - [10/Oct/2020 03:06:49] "[37mGET / HTTP/1.1[0m" 200 -
+157.44.18.64 - - [10/Oct/2020 03:06:49] "[37mGET /expense_data?_=1602299207769 HTTP/1.1[0m" 200 -
+157.44.18.64 - - [10/Oct/2020 03:06:49] "[37mGET /current_expense_data?_=1602299207770 HTTP/1.1[0m" 200 -
+85.93.20.170 - - [10/Oct/2020 06:06:39] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+85.93.20.170 - - [10/Oct/2020 06:06:39] "[35m[1m  /*à     Cookie: mstshash=Administr[0m" HTTPStatus.BAD_REQUEST -
+157.44.12.42 - - [10/Oct/2020 12:04:06] "[37mGET / HTTP/1.1[0m" 200 -
+157.44.12.42 - - [10/Oct/2020 12:04:08] "[37mGET /expense_data?_=1602331446430 HTTP/1.1[0m" 200 -
+157.44.12.42 - - [10/Oct/2020 12:04:08] "[37mGET /current_expense_data?_=1602331446431 HTTP/1.1[0m" 200 -
+157.44.12.42 - - [10/Oct/2020 12:04:18] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+157.44.12.42 - - [10/Oct/2020 12:04:23] "[37mGET / HTTP/1.1[0m" 200 -
+157.44.12.42 - - [10/Oct/2020 12:04:24] "[37mGET /expense_data?_=1602331462317 HTTP/1.1[0m" 200 -
+157.44.12.42 - - [10/Oct/2020 12:04:24] "[37mGET /current_expense_data?_=1602331462318 HTTP/1.1[0m" 200 -
+157.44.12.42 - - [10/Oct/2020 12:04:36] "[37mGET / HTTP/1.1[0m" 200 -
+157.44.12.42 - - [10/Oct/2020 12:04:37] "[37mGET /expense_data?_=1602331475277 HTTP/1.1[0m" 200 -
+157.44.12.42 - - [10/Oct/2020 12:04:37] "[37mGET /current_expense_data?_=1602331475278 HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 02:51:23] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 02:51:23] "[37mGET /expense_data?_=1602384681858 HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 02:51:23] "[37mGET /current_expense_data?_=1602384681859 HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:29:01] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:29:03] "[37mGET /expense_data?_=1602412140710 HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:29:03] "[37mGET /current_expense_data?_=1602412140711 HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:29:12] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:29:17] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:29:17] "[37mGET /expense_data?_=1602412155748 HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:29:17] "[37mGET /current_expense_data?_=1602412155749 HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:31:24] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:31:30] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:31:30] "[37mGET /expense_data?_=1602412288192 HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:31:30] "[37mGET /current_expense_data?_=1602412288193 HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:32:03] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:32:09] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:32:09] "[37mGET /expense_data?_=1602412327405 HTTP/1.1[0m" 200 -
+183.83.147.180 - - [11/Oct/2020 10:32:09] "[37mGET /current_expense_data?_=1602412327406 HTTP/1.1[0m" 200 -
+198.20.87.98 - - [11/Oct/2020 13:25:37] "[37mGET / HTTP/1.1[0m" 200 -
+198.20.87.98 - - [11/Oct/2020 13:25:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+45.146.164.179 - - [11/Oct/2020 14:32:48] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+45.146.164.179 - - [11/Oct/2020 14:32:48] "[35m[1m  /*à     Cookie: mstshash=Administr[0m" HTTPStatus.BAD_REQUEST -
+45.146.164.179 - - [11/Oct/2020 22:09:17] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+45.146.164.179 - - [11/Oct/2020 22:09:17] "[35m[1m  /*à     Cookie: mstshash=Administr[0m" HTTPStatus.BAD_REQUEST -
+183.83.146.138 - - [12/Oct/2020 00:35:52] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.138 - - [12/Oct/2020 00:35:53] "[37mGET /expense_data?_=1602462950973 HTTP/1.1[0m" 200 -
+183.83.146.138 - - [12/Oct/2020 00:35:53] "[37mGET /current_expense_data?_=1602462950974 HTTP/1.1[0m" 200 -
