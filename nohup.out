@@ -447,3 +447,17 @@ OSError: [Errno 98] Address already in use
 183.83.146.138 - - [12/Oct/2020 00:35:52] "[37mGET / HTTP/1.1[0m" 200 -
 183.83.146.138 - - [12/Oct/2020 00:35:53] "[37mGET /expense_data?_=1602462950973 HTTP/1.1[0m" 200 -
 183.83.146.138 - - [12/Oct/2020 00:35:53] "[37mGET /current_expense_data?_=1602462950974 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/meta.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/meta.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/meta.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-36.pyc', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
