@@ -286,3 +286,71 @@ OSError: [Errno 98] Address already in use
 157.47.112.199 - - [07/Oct/2020 13:00:41] "[37mGET / HTTP/1.1[0m" 200 -
 157.47.112.199 - - [07/Oct/2020 13:00:41] "[37mGET /expense_data?_=1602075639969 HTTP/1.1[0m" 200 -
 157.47.112.199 - - [07/Oct/2020 13:00:41] "[37mGET /current_expense_data?_=1602075639970 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+167.248.133.36 - - [07/Oct/2020 14:16:26] code 400, message Bad request syntax ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\x80p\x91\x8e\x93\x17²\x06jGÇHÌm\x1f¾p@ê¶\x84ãì\x85ÝH-·¬I\x1f,\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\tÀ\x14À')
+167.248.133.36 - - [07/Oct/2020 14:16:26] "[35m[1m {  wp²jGÇHÌm¾p@ê¶ãìÝH-·¬I,  À/À+ÀÀÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+167.248.133.36 - - [07/Oct/2020 14:16:28] "[37mGET / HTTP/1.1[0m" 200 -
+167.248.133.36 - - [07/Oct/2020 14:16:28] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.70 - - [07/Oct/2020 17:27:02] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.70 - - [07/Oct/2020 17:27:03] "[37mGET /expense_data?_=1602091621851 HTTP/1.1[0m" 200 -
+183.83.146.70 - - [07/Oct/2020 17:27:03] "[37mGET /current_expense_data?_=1602091621852 HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 06:40:25] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 06:40:25] "[37mGET /expense_data?_=1602139224239 HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 06:40:25] "[37mGET /current_expense_data?_=1602139224240 HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 06:40:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+157.47.107.194 - - [08/Oct/2020 11:25:08] "[37mGET / HTTP/1.1[0m" 200 -
+157.47.107.194 - - [08/Oct/2020 11:25:14] "[37mGET / HTTP/1.1[0m" 200 -
+157.47.107.194 - - [08/Oct/2020 11:25:23] "[37mGET /expense_data?_=1602156321588 HTTP/1.1[0m" 200 -
+157.47.107.194 - - [08/Oct/2020 11:25:23] "[37mGET /current_expense_data?_=1602156321589 HTTP/1.1[0m" 200 -
+157.47.107.194 - - [08/Oct/2020 11:25:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+183.83.147.222 - - [08/Oct/2020 11:25:40] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 11:25:46] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 11:25:46] "[37mGET /expense_data?_=1602156344602 HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 11:25:46] "[37mGET /current_expense_data?_=1602156344603 HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 11:26:02] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 11:26:07] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 11:26:08] "[37mGET /expense_data?_=1602156366399 HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 11:26:08] "[37mGET /current_expense_data?_=1602156366400 HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 15:22:00] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 15:22:00] "[37mGET /expense_data?_=1602170518940 HTTP/1.1[0m" 200 -
+183.83.147.222 - - [08/Oct/2020 15:22:00] "[37mGET /current_expense_data?_=1602170518941 HTTP/1.1[0m" 200 -
+162.142.125.51 - - [08/Oct/2020 20:09:42] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03ý\x14íîÚ\x9a³Fã«ó[q%\x9d"ó\x1b\x8b\x91};ÖpH¼aã¤l\x90G\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+162.142.125.51 - - [08/Oct/2020 20:09:42] "[35m[1m {  wýíîÚ³Fã«ó[q%"ó};ÖpH¼aã¤lG  À/À+ÀÀÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+162.142.125.51 - - [08/Oct/2020 20:09:43] "[37mGET / HTTP/1.1[0m" 200 -
+162.142.125.51 - - [08/Oct/2020 20:09:44] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 02:41:36] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 02:41:37] "[37mGET /expense_data?_=1602211295457 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 02:41:37] "[37mGET /current_expense_data?_=1602211295458 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 02:41:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+183.83.147.3 - - [09/Oct/2020 02:41:39] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 02:41:40] "[37mGET /expense_data?_=1602211298342 HTTP/1.1[0m" 200 -
+183.83.147.3 - - [09/Oct/2020 02:41:40] "[37mGET /current_expense_data?_=1602211298343 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
