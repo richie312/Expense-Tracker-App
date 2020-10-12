@@ -37,7 +37,7 @@ class DataObject(object):
     # monthly current_total_expense_insertion
 
     def current_total_expense_base(self,conn,sheet,row):
-        logger.info("{}:Inserting data for monthly_current_expense_template."
+        logger.info("{}:Inserting data for monthly_current_expense_template.").format(datetime.now())
         values = self.data.iloc[:row,].values.tolist()
         for val in values:
             val.append(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
@@ -47,7 +47,8 @@ class DataObject(object):
             conn.commit()
             print(query)
         cursor.close()
-        
+        cursor.close()
+    
 
     def current_total_expense_insertion(self,conn):
         cursor = conn.cursor()
