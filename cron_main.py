@@ -37,15 +37,6 @@ generate_dataframe = bool(args.generate_dataframe)
 logger.info('The arg value for generate_dataframe is {}'.format(generate_dataframe))
 
 
-# Generate Dataframe
-if generate_dataframe == True:
-    for sheet in list_sheet_names:
-        if sheet == 'expense':
-            print("This sheet wil be creating after comapring the results from database.")
-        else:
-            data = generate_dataframe(filename,sheet)
-            data.to_csv(os.path.join(data_folder,'{}.csv'.format(sheet)),index = False)
-
 # Data Insertion
 # Instantiate database connection
 logger.info("{}: Connecting to database...".format(datetime.now()))
@@ -64,6 +55,10 @@ for sheet in list_sheet_names:
     print(sheet)
     if sheet == 'actual_cost_v1':
         print('Actual table is populated on real time basis.')
+    elif sheet == 'planned_estimated_cost_v1':
+        print('This table is updated on the last day of the month.')
+    elif sheet == 'current_total_expense_base':
+        print('This table is updated on the last day of the month.')    
     else:
         logger.info("{}: Data insertion for table {} is in progress...".format(datetime.now(),sheet))
         datapath = os.path.join(data_folder,sheet+'.csv')
@@ -75,6 +70,31 @@ for sheet in list_sheet_names:
 logger.info("All Database Updated.")
 with open(r'logs.txt','a+') as outfile:
     outfile.write("{}: All database updated \n".format(datetime.now()))
+
+with open(r'month_last_date.json','r') as readfile:
+    month_lastdate_map = json.load(readfile)
+
+day_of_month = datetime.now().day
+month = datetime.now().month
+
+if day_of_month == month_lastdate_map[str(month)]:
+    logger.info("Generating and Inserting the base templates in the database.") 
+    list_base_templates = []
+    list_base_templates.extend(list_sheet_names)
+    list_base_templates.append('current_total_expense_base')
+    list_base_templates.append('planned_estimated_cost_v1')
+    list_base_templates = list_base_templates[-2:]
+    for sheet in list_base_templates:
+        logger.info('generating base template for {}'.format(sheet))
+        data = generate_dataframe(filename,sheet)
+        data.to_csv(os.path.join(data_folder,'{}.csv'.format(sheet)),index = False)
+    # Inserting in the the database
+        logger.info("{}: Data insertion for table {} is in progress...".format(datetime.now(),sheet))
+        datapath = os.path.join(data_folder,sheet+'.csv')
+        df = DataObject(datapath)
+        eval(meta.run_config[sheet])
+        logger.info("{}: Data insertion for table {} is completed.".format(datetime.now(),sheet))
+
 # Connection Closure
 logger.info("{}: Database connection closure.".format(datetime.now()))
 conn.close()

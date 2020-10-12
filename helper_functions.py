@@ -34,6 +34,21 @@ class DataObject(object):
     def display_columns(self):
         return self.data.columns.values.tolist()
 
+    # monthly current_total_expense_insertion
+
+    def current_total_expense_base(self,conn,sheet,row):
+        logger.info("{}:Inserting data for monthly_current_expense_template."
+        values = self.data.iloc[:row,].values.tolist()
+        for val in values:
+            val.append(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+            val.append(int(datetime.now().strftime('%Y%m%d%H%M')))
+            query = """INSERT INTO Expense.actual_cost_table_v1 (Commodity, Quantity, Cost, Total, GrandTotal,Cumulative_Quantity ,updated, batchid) values {vals}""".format(table_name = sheet,vals= tuple(val))
+            cursor.execute(query)  
+            conn.commit()
+            print(query)
+        cursor.close()
+        
+
     def current_total_expense_insertion(self,conn):
         cursor = conn.cursor()
         latest_batchid_query = "Select max(batchid) from Expense.actual_cost_v1"
