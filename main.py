@@ -137,12 +137,26 @@ def addDetails():
 
         query = "SET SQL_SAFE_UPDATES = 0;"
         cursor.execute(query)
-        cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = Cost + {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),latest_batchid)
-        cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
-        conn.commit()
-        update_total_cost_query = "update Expense.actual_cost_v1 set Total = Cumulative_Quantity * Cost, updated = %s where batchid = {} and Commodity = %s".format(latest_batchid)
-        cursor.execute(update_total_cost_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
-        conn.commit()
+        if data['transaction_type'] == 'cash':
+            cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = Cost + {},transaction_type = %s,items_not_consider = {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),int(data["quantity"]),latest_batchid)
+            cursor.execute(cash_query,(data['transaction_type'],datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+            conn.commit()
+        else:
+            cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = Cost + {},transaction_type = {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),None,latest_batchid)
+            cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+            conn.commit()
+        # check if the transaction type is cash or not?
+        query = "select transaction_type from Expense.actual_cost_v1 where batchid = {} and Commodity = %s".format(latest_batchid)
+        cursor.execute(query,(data['item_type'],))
+        transaction_type = cursor.fetchone()
+        if transaction_type[0] != None:
+            update_total_cost_query = "update Expense.actual_cost_v1 set Total = (Cumulative_Quantity * Cost) - (items_not_consider * Cost), updated = %s where batchid = {} and Commodity = %s".format(latest_batchid)
+            cursor.execute(update_total_cost_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+            conn.commit()
+        else:
+            update_total_cost_query = "update Expense.actual_cost_v1 set Total = Cumulative_Quantity * Cost, updated = %s where batchid = {} and Commodity = %s".format(latest_batchid)
+            cursor.execute(update_total_cost_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+            conn.commit()
         sum_query = "Select sum(Total) from Expense.actual_cost_v1 where batchid = {}".format(latest_batchid)
         cursor.execute(sum_query)
         total = cursor.fetchone()
@@ -160,9 +174,26 @@ def addDetails():
 
         query = "SET SQL_SAFE_UPDATES = 0;"
         cursor.execute(query)
-        cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = {},Total = Cumulative_Quantity * {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),int(data["cost"]),latest_batchid)
-        cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
-        conn.commit()
+        if data['transaction_type'] == 'cash':
+            cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = {},transaction_type = %s,items_not_consider = items_not_consider + {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),int(data["quantity"]),latest_batchid)
+            cursor.execute(cash_query,(data['transaction_type'],datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+            conn.commit()
+        else:
+            cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = {},transaction_type = {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),None,latest_batchid)
+            cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+            conn.commit()
+        # check if the transaction type is cash or not?
+        query = "select transaction_type from Expense.actual_cost_v1 where batchid = {} and Commodity = %s".format(latest_batchid)
+        cursor.execute(query,('cig',))
+        transaction_type = cursor.fetchone()
+        if transaction_type[0] != None:
+            update_total_cost_query = "update Expense.actual_cost_v1 set Total = (Cumulative_Quantity * Cost) - (items_not_consider * Cost), updated = %s where batchid = {} and Commodity = %s".format(latest_batchid)
+            cursor.execute(update_total_cost_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+            conn.commit()
+        else:
+            update_total_cost_query = "update Expense.actual_cost_v1 set Total = Cumulative_Quantity * Cost, updated = %s where batchid = {} and Commodity = %s".format(latest_batchid)
+            cursor.execute(update_total_cost_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+            conn.commit()
         sum_query = "Select sum(Total) from Expense.actual_cost_v1 where batchid = {}".format(latest_batchid)
         cursor.execute(sum_query)
         total = cursor.fetchone()
@@ -176,5 +207,4 @@ def addDetails():
 
 if __name__ == '__main__':
     app.run(host = '0.0.0.0',debug=True,port=5003)
-
 

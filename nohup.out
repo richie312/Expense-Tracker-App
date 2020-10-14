@@ -508,3 +508,12 @@ OSError: [Errno 98] Address already in use
 183.83.147.251 - - [14/Oct/2020 05:06:48] "[37mGET / HTTP/1.1[0m" 200 -
 183.83.147.251 - - [14/Oct/2020 05:06:49] "[37mGET /expense_data?_=1602652007898 HTTP/1.1[0m" 200 -
 183.83.147.251 - - [14/Oct/2020 05:06:49] "[37mGET /current_expense_data?_=1602652007899 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
