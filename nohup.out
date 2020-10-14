@@ -461,3 +461,50 @@ OSError: [Errno 98] Address already in use
  * Restarting with inotify reloader
  * Debugger is active!
  * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.146.138 - - [13/Oct/2020 05:49:56] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.138 - - [13/Oct/2020 05:49:57] "[37mGET /expense_data?_=1602568196512 HTTP/1.1[0m" 200 -
+183.83.146.138 - - [13/Oct/2020 05:49:57] "[37mGET /current_expense_data?_=1602568196513 HTTP/1.1[0m" 200 -
+183.83.146.138 - - [13/Oct/2020 05:49:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+5.8.18.88 - - [13/Oct/2020 05:53:56] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+5.8.18.88 - - [13/Oct/2020 05:53:56] "[35m[1m  /*à     Cookie: mstshash=Administr[0m" HTTPStatus.BAD_REQUEST -
+5.8.18.88 - - [13/Oct/2020 07:34:53] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+5.8.18.88 - - [13/Oct/2020 07:34:53] "[35m[1m  /*à     Cookie: mstshash=Administr[0m" HTTPStatus.BAD_REQUEST -
+5.8.18.88 - - [13/Oct/2020 09:29:27] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+5.8.18.88 - - [13/Oct/2020 09:29:27] "[35m[1m  /*à     Cookie: mstshash=Administr[0m" HTTPStatus.BAD_REQUEST -
+192.35.169.48 - - [13/Oct/2020 23:44:40] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.251 - - [14/Oct/2020 02:49:28] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.251 - - [14/Oct/2020 02:49:29] "[37mGET /expense_data?_=1602643768360 HTTP/1.1[0m" 200 -
+183.83.147.251 - - [14/Oct/2020 02:49:29] "[37mGET /current_expense_data?_=1602643768361 HTTP/1.1[0m" 200 -
+183.83.147.251 - - [14/Oct/2020 04:59:03] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.251 - - [14/Oct/2020 04:59:04] "[37mGET /expense_data?_=1602651542776 HTTP/1.1[0m" 200 -
+183.83.147.251 - - [14/Oct/2020 04:59:04] "[37mGET /current_expense_data?_=1602651542777 HTTP/1.1[0m" 200 -
+183.83.147.251 - - [14/Oct/2020 04:59:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+183.83.147.251 - - [14/Oct/2020 05:06:48] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.251 - - [14/Oct/2020 05:06:49] "[37mGET /expense_data?_=1602652007898 HTTP/1.1[0m" 200 -
+183.83.147.251 - - [14/Oct/2020 05:06:49] "[37mGET /current_expense_data?_=1602652007899 HTTP/1.1[0m" 200 -
