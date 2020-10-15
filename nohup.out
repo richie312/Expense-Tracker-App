@@ -584,3 +584,63 @@ mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 
  * Restarting with inotify reloader
  * Debugger is active!
  * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.146.205 - - [15/Oct/2020 06:57:36] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 06:57:37] "[35m[1mGET /expense_data?_=1602745055366 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Expense-Tracker-App/main_mobile.py", line 81, in expense_data
+    temp_df['Unit of Measurement'] = ['Bottle','Units','INR','INR','Bottle','INR','INR','INR','INR']
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/pandas/core/frame.py", line 3487, in __setitem__
+    self._set_item(key, value)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/pandas/core/frame.py", line 3564, in _set_item
+    value = self._sanitize_column(key, value)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/pandas/core/frame.py", line 3749, in _sanitize_column
+    value = sanitize_index(value, self.index, copy=False)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/pandas/core/internals/construction.py", line 612, in sanitize_index
+    raise ValueError("Length of values does not match length of index")
+ValueError: Length of values does not match length of index
+183.83.146.205 - - [15/Oct/2020 06:57:37] "[37mGET /current_expense_data?_=1602745055367 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 06:57:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+183.83.146.205 - - [15/Oct/2020 06:58:10] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 06:58:11] "[37mGET /expense_data?_=1602745089268 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 06:58:11] "[37mGET /current_expense_data?_=1602745089269 HTTP/1.1[0m" 200 -

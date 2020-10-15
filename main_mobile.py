@@ -63,7 +63,7 @@ def homepage():
     last_cash_withdrawn = int(val[3])
     #cursor.close()
     #conn.close()
-    return render_template("user_form.html", 
+    return render_template("user_form_mobile.html", 
                             item_list = commodity_list,
                             last_cash_withdrawn = last_cash_withdrawn)
 
@@ -142,14 +142,14 @@ def addDetails():
             cursor.execute(cash_query,(data['transaction_type'],datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
             conn.commit()
         else:
-            cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = Cost + {},transaction_type = {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),None,latest_batchid)
-            cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+            cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = Cost + {},transaction_type = %s,updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),latest_batchid)
+            cursor.execute(cash_query,('',datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
             conn.commit()
         # check if the transaction type is cash or not?
         query = "select transaction_type from Expense.actual_cost_v1 where batchid = {} and Commodity = %s".format(latest_batchid)
         cursor.execute(query,(data['item_type'],))
         transaction_type = cursor.fetchone()
-        if transaction_type[0] != None:
+        if transaction_type[0] == '':
             update_total_cost_query = "update Expense.actual_cost_v1 set Total = (Cumulative_Quantity * Cost) - (items_not_consider * Cost), updated = %s where batchid = {} and Commodity = %s".format(latest_batchid)
             cursor.execute(update_total_cost_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
             conn.commit()
@@ -179,14 +179,14 @@ def addDetails():
             cursor.execute(cash_query,(data['transaction_type'],datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
             conn.commit()
         else:
-            cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = {},transaction_type = {},updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),None,latest_batchid)
-            cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+            cash_query = """update Expense.actual_cost_v1 set Quantity = {}, Cumulative_Quantity = Cumulative_Quantity + {}, Cost = {},transaction_type = %s,updated = %s where batchid = {} and Commodity = %s""".format(int(data["quantity"]),int(data["quantity"]),int(data["cost"]),latest_batchid)
+            cursor.execute(cash_query,('',datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
             conn.commit()
         # check if the transaction type is cash or not?
         query = "select transaction_type from Expense.actual_cost_v1 where batchid = {} and Commodity = %s".format(latest_batchid)
-        cursor.execute(query,('cig',))
+        cursor.execute(query,(data['item_type'],))
         transaction_type = cursor.fetchone()
-        if transaction_type[0] != None:
+        if transaction_type[0] == '':
             update_total_cost_query = "update Expense.actual_cost_v1 set Total = (Cumulative_Quantity * Cost) - (items_not_consider * Cost), updated = %s where batchid = {} and Commodity = %s".format(latest_batchid)
             cursor.execute(update_total_cost_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
             conn.commit()
