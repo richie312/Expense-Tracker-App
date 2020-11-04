@@ -517,3 +517,130 @@ OSError: [Errno 98] Address already in use
  * Restarting with inotify reloader
  * Debugger is active!
  * Debugger PIN: 162-659-695
+183.83.147.251 - - [14/Oct/2020 06:05:40] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.147.251 - - [14/Oct/2020 06:05:41] "[37mGET /expense_data?_=1602655540065 HTTP/1.1[0m" 200 -
+183.83.147.251 - - [14/Oct/2020 06:05:41] "[37mGET /current_expense_data?_=1602655540066 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:03:23] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:03:24] "[37mGET /expense_data?_=1602738203768 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:03:24] "[37mGET /current_expense_data?_=1602738203769 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:03:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+183.83.146.205 - - [15/Oct/2020 05:03:39] "[35m[1mPOST /addDetails HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Expense-Tracker-App/main_mobile.py", line 183, in addDetails
+    cursor.execute(cash_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),data['item_type'],))
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+183.83.146.205 - - [15/Oct/2020 05:03:39] "[37mGET /addDetails?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:03:39] "[37mGET /addDetails?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:03:39] "[37mGET /addDetails?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:03:40] "[37mGET /addDetails?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:03:40] "[37mGET /addDetails?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:03:40] "[37mGET /addDetails?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:05:52] "[37mGET /expense_data?_=1602738351975 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:05:53] "[37mGET /current_expense_data?_=1602738351976 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:06:29] "[37mPOST /addDetails HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:06:34] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:06:34] "[37mGET /expense_data?_=1602738393756 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:06:34] "[37mGET /current_expense_data?_=1602738393757 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:06:53] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:06:53] "[37mGET /expense_data?_=1602738412786 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:06:53] "[37mGET /current_expense_data?_=1602738412787 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:07:06] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:07:06] "[37mGET /expense_data?_=1602738425840 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:07:06] "[37mGET /current_expense_data?_=1602738425841 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:07:41] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:07:42] "[37mGET /expense_data?_=1602738461334 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:07:42] "[37mGET /current_expense_data?_=1602738461335 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:38:23] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:38:24] "[37mGET /expense_data?_=1602740303434 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:38:24] "[37mGET /current_expense_data?_=1602740303435 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 05:38:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+ * Detected change in '/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu/python-config.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/database.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/decrypt.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/main_mobile.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.146.205 - - [15/Oct/2020 06:57:36] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 06:57:37] "[35m[1mGET /expense_data?_=1602745055366 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Expense-Tracker-App/main_mobile.py", line 81, in expense_data
+    temp_df['Unit of Measurement'] = ['Bottle','Units','INR','INR','Bottle','INR','INR','INR','INR']
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/pandas/core/frame.py", line 3487, in __setitem__
+    self._set_item(key, value)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/pandas/core/frame.py", line 3564, in _set_item
+    value = self._sanitize_column(key, value)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/pandas/core/frame.py", line 3749, in _sanitize_column
+    value = sanitize_index(value, self.index, copy=False)
+  File "/home/ubuntu/envs/expense/lib/python3.6/site-packages/pandas/core/internals/construction.py", line 612, in sanitize_index
+    raise ValueError("Length of values does not match length of index")
+ValueError: Length of values does not match length of index
+183.83.146.205 - - [15/Oct/2020 06:57:37] "[37mGET /current_expense_data?_=1602745055367 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 06:57:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+183.83.146.205 - - [15/Oct/2020 06:58:10] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 06:58:11] "[37mGET /expense_data?_=1602745089268 HTTP/1.1[0m" 200 -
+183.83.146.205 - - [15/Oct/2020 06:58:11] "[37mGET /current_expense_data?_=1602745089269 HTTP/1.1[0m" 200 -
