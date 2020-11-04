@@ -183,14 +183,15 @@ $(document).ready(function () {
 
       ],
       "createdRow": function(row, data, dataIndex) {
-        if( data["Now"] >= 15000  ){
-                                $(row).css('background-color', 'Green');
-                            }
+      
         if( data["Now"] < 15000  ){
-            $(row).css('background-color', 'Orange');
-        }
-        else{
+                                $(row).css('background-color', 'orange');
+                            }
+        if( data["Now"] < 10000  ){
             $(row).css('background-color', 'Red');
+        }
+        if( data["Now"] >= 15000  ){
+            $(row).css('background-color', 'Green');
         }
     
   }
