@@ -959,3 +959,10 @@ ValueError: Length of values does not match length of index
  * Restarting with inotify reloader
  * Debugger is active!
  * Debugger PIN: 162-659-695
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/__pycache__/helper_functions.cpython-36.pyc', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
+183.83.146.177 - - [04/Nov/2020 08:24:23] "[37mGET / HTTP/1.1[0m" 200 -
+183.83.146.177 - - [04/Nov/2020 08:24:23] "[37mGET /expense_data?_=1604478263295 HTTP/1.1[0m" 200 -
+183.83.146.177 - - [04/Nov/2020 08:24:24] "[37mGET /current_expense_data?_=1604478263296 HTTP/1.1[0m" 200 -
