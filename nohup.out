@@ -939,3 +939,23 @@ ValueError: Length of values does not match length of index
 183.83.146.177 - - [04/Nov/2020 08:08:14] "[37mGET / HTTP/1.1[0m" 200 -
 183.83.146.177 - - [04/Nov/2020 08:08:14] "[37mGET /expense_data?_=1604477294151 HTTP/1.1[0m" 200 -
 183.83.146.177 - - [04/Nov/2020 08:08:14] "[37mGET /current_expense_data?_=1604477294152 HTTP/1.1[0m" 200 -
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-37.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-37.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-38.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/__init__.cpython-38.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-37.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-37.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-38.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/__pycache__/meta.cpython-38.pyc', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/meta.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/meta.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/config/meta.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/cron_main.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Detected change in '/home/ubuntu/Expense-Tracker-App/helper_functions.py', reloading
+ * Restarting with inotify reloader
+ * Debugger is active!
+ * Debugger PIN: 162-659-695
