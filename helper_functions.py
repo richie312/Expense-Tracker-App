@@ -14,7 +14,7 @@ data_folder = os.path.join(root_folder,'data')
 logger = logging.getLogger()
 logging.basicConfig(level= logging.INFO)
 
-def generate_dataframe(filename,sheet):
+def generate_sheets(filename,sheet):
     root_folder = os.getcwd()
     data_folder = os.path.join(root_folder,'data')
     xls = pd.ExcelFile(os.path.join(data_folder,filename))
@@ -37,16 +37,20 @@ class DataObject(object):
     # monthly current_total_expense_insertion
 
     def current_total_expense_base(self,conn,sheet,row):
-        logger.info("{}:Inserting data for monthly_current_expense_template.").format(datetime.now())
+        cursor = conn.cursor()
+        logger.info("{}:Inserting data for monthly_current_expense_template.".format(datetime.now()))
         values = self.data.iloc[:row,].values.tolist()
         for val in values:
             val.append(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-            val.append(int(datetime.now().strftime('%Y%m%d%H%M')))
-            query = """INSERT INTO Expense.actual_cost_table_v1 (Commodity, Quantity, Cost, Total, GrandTotal,Cumulative_Quantity ,updated, batchid) values {vals}""".format(table_name = sheet,vals= tuple(val))
+            batchid = int(datetime.now().strftime('%Y%m%d%H%M'))
+            val.append(batchid)
+            query = """INSERT INTO Expense.actual_cost_v1 (Commodity, Quantity, Cost, Total, GrandTotal,Cumulative_Quantity ,updated, batchid) values {vals}""".format(table_name = sheet,vals= tuple(val))
             cursor.execute(query)  
             conn.commit()
             print(query)
-        cursor.close()
+        update_query = "update Expense.actual_cost_v1 set transaction_type = %s, items_not_consider = {} where batchid = {}".format(0,batchid)
+        cursor.execute(update_query,('',))
+        conn.commit()
         cursor.close()
     
 
@@ -72,7 +76,27 @@ class DataObject(object):
         cursor.execute(update_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),))
         conn.commit()
         cursor.close()
-            
+     
+    def current_total_cash_base_insertion(self,conn):
+        cursor = conn.cursor()
+        df = pd.read_csv(os.path.join(data_folder,'current_total_expense_v1.csv'))
+        latest_batchid_query = "Select max(batchid) from Expense.current_total_expense_v1"
+        cursor.execute(latest_batchid_query)
+        latest_batchid = cursor.fetchall()
+        latest_batchid = latest_batchid[0][0]
+        batchid = int(datetime.now().strftime('%Y%m%d%H%M'))
+        number_of_days = calendar.monthrange(datetime.now().year, datetime.now().month)[1]
+        today = datetime.now().day
+        days_left = number_of_days - today - 1
+        insert_query = """Insert into Expense.current_total_expense_v1 (Now, Earlier,Cash_Withdrawn,Days_Left,updated,batchid) 
+                            values ({},{},{},{},%s,{})""".format(int(df['Now'][0]),int(df['Earlier'][0]),0,days_left,batchid)
+        cursor.execute(insert_query,(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),))
+        conn.commit()
+        cursor.close()
+                
+        
+     
+        
     def planned_estimated_cost_insertion(self,conn,sheet,row):
         cursor = conn.cursor()
         validation_query = """Select max(batchid) from Expense.{table_name}""".format(table_name = sheet)

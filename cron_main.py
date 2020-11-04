@@ -10,13 +10,13 @@ import logging
 import json
 from database import db_connection_string
 from datetime import datetime
-from helper_functions import generate_dataframe,DataObject, rules_check
+from helper_functions import generate_sheets,DataObject, rules_check
 
 # Initailise the logger
 logger = logging.getLogger()
 logging.basicConfig(filename='cron_man.log', encoding='utf-8', level= logging.INFO)
 
-
+#os.chdir(r'D:\monthly_expense_tracker')
 # set the root and data folder
 root_folder = os.getcwd()
 data_folder = os.path.join(root_folder,'data')
@@ -80,21 +80,22 @@ month = datetime.now().month
 
 if day_of_month == month_lastdate_map[str(month)]:
     logger.info("Generating and Inserting the base templates in the database.") 
-    list_base_templates = []
-    list_base_templates.extend(list_sheet_names)
-    list_base_templates.append('current_total_expense_base')
-    list_base_templates.append('planned_estimated_cost_v1')
-    list_base_templates = list_base_templates[-2:]
+    list_base_templates = ['current_total_expense_base', 'planned_estimated_cost_v1',
+                           'current_total_cash_base']
     for sheet in list_base_templates:
-        logger.info('generating base template for {}'.format(sheet))
-        data = generate_dataframe(filename,sheet)
-        data.to_csv(os.path.join(data_folder,'{}.csv'.format(sheet)),index = False)
-    # Inserting in the the database
-        logger.info("{}: Data insertion for table {} is in progress...".format(datetime.now(),sheet))
-        datapath = os.path.join(data_folder,sheet+'.csv')
-        df = DataObject(datapath)
-        eval(meta.run_config[sheet])
-        logger.info("{}: Data insertion for table {} is completed.".format(datetime.now(),sheet))
+        if sheet == 'current_total_cash_base':
+            logger.info("{}: Data insertion for table {} is in progress...".format(datetime.now(),sheet))
+            eval(meta.run_config[sheet])
+        else:    
+            logger.info('generating base template for {}'.format(sheet))
+            data = generate_sheets(filename,sheet)
+            data.to_csv(os.path.join(data_folder,'{}.csv'.format(sheet)),index = False)
+            # Inserting in the the database
+            logger.info("{}: Data insertion for table {} is in progress...".format(datetime.now(),sheet))
+            datapath = os.path.join(data_folder,sheet+'.csv')
+            df = DataObject(datapath)
+            eval(meta.run_config[sheet])
+            logger.info("{}: Data insertion for table {} is completed.".format(datetime.now(),sheet))
 
 # Connection Closure
 logger.info("{}: Database connection closure.".format(datetime.now()))
